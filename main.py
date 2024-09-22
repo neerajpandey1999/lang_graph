@@ -38,21 +38,21 @@ graph_builder.add_edge("chatbot",END)
 
 graph=graph_builder.compile()
 
-# import os
-#
-# try:
-#   image_path = 'graph_image.png'
-#   image_data = graph.get_graph().draw_mermaid_png()
-#
-#   if image_data:
-#     with open(image_path, 'wb') as f:
-#       f.write(image_data)
-#     print(f"Image saved to {os.path.abspath(image_path)}")
-#     os.system(f'open {image_path}')
-#   else:
-#     print("No image data returned from the graph.")
-# except Exception as e:
-#   print("An error occurred:", e)
+import os
+
+try:
+  image_path = 'graph_image.png'
+  image_data = graph.get_graph().draw_mermaid_png()
+
+  if image_data:
+    with open(image_path, 'wb') as f:
+      f.write(image_data)
+    print(f"Image saved to {os.path.abspath(image_path)}")
+    os.system(f'open {image_path}')
+  else:
+    print("No image data returned from the graph.")
+except Exception as e:
+  print("An error occurred:", e)
 
 while True:
   user_input=input("User: ")
